@@ -1,12 +1,85 @@
-// Final Project
 // Alex Waclawik
-// April 28th, 2020
-// main.cpp
+// May 11th 2021
+// Orbital Transfer Calculator
 
-#define _USE_MATH_DEFINES
-
+// c++ libraries
+#include <iostream>
+#include <fstream>
 #include <cmath>
-#include "user.h"
+
+// global variables
+
+
+// data structures
+struct body {
+	int mohoMu = 168609380000;
+	int mohoAxis = 5263138304;
+	int mohoSOI = 9646663;
+	int mohoVel = 1161;
+	int eveMu = 8171730200000;
+	int eveAxis = 9832684544;
+	int eveSOI = 85109365;
+	int eveVel = 4831;
+	int kerbinMu = 3531600000000;
+	int kerbinAxis = 13599840256;
+	int kerbinSOI = 84159286;
+	int kerbinVel = 3431;
+	int dunaMu = 301363210000;
+	int dunaAxis = 20726155264;
+	int dunaSOI = 47921949;
+	int dunaVel = 1372;
+	int dresMu = 21484489000;
+	int dresAxis = 40839348203;
+	int dresSOI = 47921949;
+	int dresVel = 1372;
+	int joolMu = 282528000000000;
+	int joolAxis = 68773560320;
+	int joolSOI = 2455985200;
+	int joolVel = 9704;
+	int eelooMu = 74410815000;																					
+	int eelooAxis = 90118820000;
+	int eelooSOI = 119082940;
+	int eelooVel = 841;
+}
+
+struct moon {
+	int gillyMu = 8289449;
+	int gillyAxis = 31500000;
+	int gillySOI = 126123;
+	int gillyVel = 35;
+	int munMu = 65138398000;
+	int munAxis = 12000000;
+	int munSOI = 2429559;
+	int munVel = 807;
+	int minmusMu = 1765800000;
+	int minmusAxis = 47000000;
+	int minmusSOI = 2247428;
+	int minmusVel = 242;
+	int ikeMu = 18568369000;
+	int ikeAxis = 3200000;
+	int ikeSOI = 1049590;
+	int ikeVel = 534;
+	int laytheMu = 1962000000000;
+	int laytheAxis = 27184000;
+	int laytheSOI = 3723645;
+	int laytheVel = 2801; 
+	int vallMu = 207481500000;
+	int vallAxis = 43152000;
+	int vallSOI = 2406401;
+	int vallVel = 1176;
+	int tyloMu = 2825280000000;
+	int tyloAxis = 68500000;
+	int tyloSOI = 10856518;
+	int tyloVel = 3068;
+	int bopMu = 2486834900;
+	int bopAxis = 128500000;
+	int bopSOI = 1221060;
+	int bopVel = 267;
+	int polMu = 721702080;
+	int polAxis = 179890000;
+	int polSOI = 1042138;
+	int polVel = 181;
+}
 
 // function prototypes
 void currentMenu();
@@ -17,14 +90,11 @@ void calTransferAngle();
 
 int main() {
 
-	// initialize instance of object User
-	user u;
-
 	// initalize values
 	bool keepGoing = true;
 	std::string userInput;
 	
-	// program title and "splash screen"
+	// program title and splash screen
 	std::cout << "-------------------------" << std::endl;
 	std::cout << "KSP Orbital Transfer Tool" << std::endl;
 	std::cout << "-------------------------" << std::endl;
