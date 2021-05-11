@@ -5,31 +5,40 @@
 
 ## Glossary
 
-###### Key Terms
-	1) Prograde
-		* rotational motion that is in the direction of the central body's orbit
-	2) Retrograde
-		* rotation motion that is in the opposite direction of the central body's orbit
-	3) Apoapsis
-		* highest point in an orbit where kinetic energy is lowest and potential energy is highest
-	4) Periapsis
-		* lowest point in an orbit where kinetic energy is highest and potential energy is lowest
-	5) Orbital Period
-		* time it takes for an object to complete a single orbit around a body
-	6) [Semi-Major Axis](https://en.wikipedia.org/wiki/Semi-major_and_semi-minor_axes)
-		* longest radius of an orbit
-	7) [Standard Gravitational Parameter](https://en.wikipedia.org/wiki/Standard_gravitational_parameter)
-		* represented by Mu, it is the product of the gravitational constant G and the mass of the body
-	8) [Sphere of Influence](https://en.wikipedia.org/wiki/Sphere_of_influence_(astrodynamics))
-		* the sphereical region around a body where it has gravitational influence over an orbiting object
-	9) [Escape Velocity](https://en.wikipedia.org/wiki/Escape_velocity)
-		* minimum speed needed to escape the gravitational influence of a body
-	10) [Phase Angle](https://en.wikipedia.org/wiki/Phase_angle_(astronomy))
-		* angle between the current body, target body, and the central body (sun or planet)
-		* this tells you how far forward or backward the target body will be relative to you
-	11) Transfer Angle
-		* the angle where the ejection burn will commence
-		* the angle will always be relative to the current body's prograde
+###### Prograde
+	* rotational motion that is in the direction of the central body's orbit
+
+###### Retrograde
+	* rotation motion that is in the opposite direction of the central body's orbit
+
+###### Apoapsis
+	* highest point in an orbit where kinetic energy is lowest and potential energy is highest
+
+###### Periapsis
+	* lowest point in an orbit where kinetic energy is highest and potential energy is lowest
+
+###### Orbital Period
+	* time it takes for an object to complete a single orbit around a body
+
+###### [Semi-Major Axis](https://en.wikipedia.org/wiki/Semi-major_and_semi-minor_axes)
+	* longest radius of an orbit
+
+###### [Standard Gravitational Parameter](https://en.wikipedia.org/wiki/Standard_gravitational_parameter)
+	* represented by Mu, it is the product of the gravitational constant G and the mass of the body
+
+###### [Sphere of Influence](https://en.wikipedia.org/wiki/Sphere_of_influence_(astrodynamics))
+	* the sphereical region around a body where it has gravitational influence over an orbiting object
+
+###### [Escape Velocity](https://en.wikipedia.org/wiki/Escape_velocity)
+	* minimum speed needed to escape the gravitational influence of a body
+
+###### [Phase Angle](https://en.wikipedia.org/wiki/Phase_angle_(astronomy))
+	* angle between the current body, target body, and the central body (sun or planet)
+	* this tells you how far forward or backward the target body will be relative to you
+
+###### Transfer Angle
+	* the angle where the ejection burn will commence
+	* the angle will always be relative to the current body's prograde
 
 ###### [Hohmann Transfer](https://en.wikipedia.org/wiki/Hohmann_transfer_orbit)
 	* This manuever is the most efficent way to perform an interplanetary transfer.
