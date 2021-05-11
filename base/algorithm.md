@@ -1,6 +1,8 @@
-## Alex Waclawik
-## May 11th, 2021
-## Orbital Transfer Calculato
+## Algorithm
+
+###### Alex Waclawik
+###### May 11th, 2021
+###### Orbital Transfer Calculator
 
 
 ## Glossary
@@ -45,7 +47,7 @@
 	* Utilizes and elliptical orbit and a periapsis burn (where you have the most kinetic energy)
 
 
-## Algorithm
+## Summary
 
 ###### Goals
 	* Given inputs about the user's current orbit, calculate the necessary trajectories to perform a Hohmann Transfer Orbit to a body of the user's choice.
