@@ -104,4 +104,4 @@
 		* orbital period of transfer orbit
 		* phase angle
 
-###### ![Equations](/equations.png)
+###### ![Equations](https://raw.githubusercontent.com/AlexWaclawik/Orbital-Transfer-Calculator/main/base/equations.png)
