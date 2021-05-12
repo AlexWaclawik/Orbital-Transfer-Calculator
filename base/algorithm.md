@@ -28,23 +28,25 @@
 ###### [Standard Gravitational Parameter](https://en.wikipedia.org/wiki/Standard_gravitational_parameter)
 	* represented by Mu, it is the product of the gravitational constant G and the mass of the body
 
-###### [Sphere of Influence](https://en.wikipedia.org/wiki/Sphere_of_influence_(astrodynamics))
-	* the sphereical region around a body where it has gravitational influence over an orbiting object
-
 ###### [Escape Velocity](https://en.wikipedia.org/wiki/Escape_velocity)
 	* minimum speed needed to escape the gravitational influence of a body
 
 ###### [Phase Angle](https://en.wikipedia.org/wiki/Phase_angle_(astronomy))
 	* angle between the current body, target body, and the central body (sun or planet)
 	* this tells you how far forward or backward the target body will be relative to you
-
-###### Transfer Angle
-	* the angle where the ejection burn will commence
-	* the angle will always be relative to the current body's prograde
+###### [Delta V](https://en.wikipedia.org/wiki/Delta-v)
+	* because there is a lack of non-conservative forces (like air resistance), you maintain the same speed when performing maneuvers
+	* this is why the transfer is a two steps process:
+		1) calculate change in velocity needed to escape the current body (speed up)
+		2) calculate change in velocity needed to be captured by target body (slow down)
 
 ###### [Hohmann Transfer](https://en.wikipedia.org/wiki/Hohmann_transfer_orbit)
 	* This manuever is the most efficent way to perform an interplanetary transfer.
 	* Utilizes and elliptical orbit and a periapsis burn (where you have the most kinetic energy)
+
+###### [Kerbal Space Program](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
+	* A sandbox space flight simulator that features realistic orbital mechanics and physics.
+	* Values for the body's are taken directly from the [Kerbal Space Program Wiki](https://wiki.kerbalspaceprogram.com/wiki/Main_Page)
 
 
 ## Summary
@@ -55,8 +57,6 @@
 
 ###### Inputs
 	* primary body currently being orbited
-	* apoapsis of the orbit
-	* periapsis of the orbit
 	* body that the user wants to transfer to
 
 ###### Outputs
@@ -75,18 +75,18 @@
 ## Procedure
 
 ###### Data Structures
-	1) Body
+	* Body
 		* static data structure that contains important information about each of the planets
-			* Standard Gravitational Parameter (m^2*s^-2)
+			* planet identifer (number 0-6)
+				* 0 - Moho
+				* 1 - Eve
+				* 2 - Kerbin
+				* 3 - Duna
+				* 4 - Dres
+				* 5 - Jool
+				* 5 - Eeloo
                         * Length of Semi-Major Axis (m)
-                       	* Radius of Sphere of Influence (m)
-                        * Sphere of Influence Exit Velocity (m/s)
-	2) Moon
-		* static data structure that contains important information about each of the planets
-			* Standard Gravitational Parameter (m^2*s^-2)
-                        * Length of Semi-Major Axis (m)
-                        * Radius of Sphere of Influence (m)
-                        * Sphere of Influence Exit Velocity (m/s)
+                        * Escape Velocity (m/s)
 
 ###### Calculation
 	1) After user input is taken, several values will be directly and indirectly extrapolated
@@ -99,12 +99,8 @@
 			* escape velocity of target body (v_e)
 	2) Using these values, the program will then calculate the following information:
 		* semi-major axis of transfer orbit
-			* r_transfer = (r_current + r_target) / 2
-		* orbital period of target body
-			* T_target = 2pi * sqrt[r_target^3 / mu_current]
+		* delta v required for ejection and insertion burn
+		* angular velocity of target body
 		* orbital period of transfer orbit
-			* T_transfer = 2pi * sqrt[(r_transfer)^3/mu_current]
 		* phase angle
-			* P_angle = 1 / [2 * sqrt(r_target^3 / r_transfer^3)]
-		* transfer angle 
-			* T_angle = 360 * (1/2 - (T_transfer/2 * T_target))
+	3) ![Equations](equations.png)
