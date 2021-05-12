@@ -103,4 +103,5 @@
 		* angular velocity of target body
 		* orbital period of transfer orbit
 		* phase angle
-	3) ![Equations](equations.png)
+
+###### ![Equations](/equations.png)
