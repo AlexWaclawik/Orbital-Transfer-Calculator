@@ -1,30 +1,27 @@
-struct body {
-	int mohoMu = 168609380000;
-	int mohoAxis = 5263138304;
-	int mohoSOI = 9646663;
-	int mohoVel = 1161;
-	int eveMu = 8171730200000;
-	int eveAxis = 9832684544;
-	int eveSOI = 85109365;
-	int eveVel = 4831;
-	int kerbinMu = 3531600000000;
-	int kerbinAxis = 13599840256;
-	int kerbinSOI = 84159286;
-	int kerbinVel = 3431;
-	int dunaMu = 301363210000;
-	int dunaAxis = 20726155264;
-	int dunaSOI = 47921949;
-	int dunaVel = 1372;
-	int dresMu = 21484489000;
-	int dresAxis = 40839348203;
-	int dresSOI = 47921949;
-	int dresVel = 1372;
-	int joolMu = 282528000000000;
-	int joolAxis = 68773560320;
-	int joolSOI = 2455985200;
-	int joolVel = 9704;
-	int eelooMu = 74410815000;																					
-	int eelooAxis = 90118820000;
-	int eelooSOI = 119082940;
-	int eelooVel = 841;
-}
+class Body {
+	public:
+		// 0
+		int mohoAxis;
+		int mohoVel;
+		// 1
+		int eveAxis;
+		int eveVel;
+		// 2
+		int kerbinAxis;
+		int kerbinVel;
+		// 3
+		int dunaAxis;
+		int dunaVel;
+		// 4
+		int dresAxis;
+		int dresVel;
+		// 5
+		int joolAxis;
+		int joolVel;
+		// 6
+		int eelooAxis;
+		int eelooVel;
+	public:
+		int getAxis(std::string x;
+		int getVel(std::string x);
+};
