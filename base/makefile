@@ -1,5 +1,7 @@
-mainClass: main.o
-	g++ main.o -o mainClass
+mainClass: body.o main.o
+	g++ body.o main.o -o mainClass
+body.o: body.cpp body.h
+	g++ -c body.cpp
 main.o: main.cpp
 	g++ -c main.cpp
 clean:

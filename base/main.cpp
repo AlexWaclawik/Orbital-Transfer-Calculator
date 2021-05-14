@@ -102,11 +102,11 @@ void planetMenu() {
 
 
 void calculate() {
-	
+
 	// calculate v1
 	int currentVel = b.getVel(current);
 	v1 = currentVel - orbit;
-	
+
 	// calculate v2
 	int currentAxis = b.getAxis(current);
 	int targetAxis = b.getAxis(target);
