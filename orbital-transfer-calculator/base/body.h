@@ -4,11 +4,11 @@ class Body {
 	public:
 		Body();
 		// 0
-		long mohoAxis;
-		long mohoVel;
+		float mohoAxis;
+		int mohoVel;
 		// 1
-		long eveAxis;
-		long eveVel;
+		float eveAxis;
+		int eveVel;
 		// 2
 		float kerbinAxis;
 		int kerbinVel;
@@ -16,14 +16,14 @@ class Body {
 		float dunaAxis;
 		int dunaVel;
 		// 4
-		long dresAxis;
-		long dresVel;
+		float dresAxis;
+		int dresVel;
 		// 5
-		long joolAxis;
-		long joolVel;
+		float joolAxis;
+		int joolVel;
 		// 6
-		long eelooAxis;
-		long eelooVel;
+		float eelooAxis;
+		int eelooVel;
 	public:
 		float getAxis(std::string x);
 		int getVel(std::string x);

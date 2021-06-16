@@ -14,7 +14,6 @@
 Body b;
 
 // global variables
-//long MU = 1172332800000000000;
 long MU = 117233280;
 std::string current;
 int orbit;
@@ -111,48 +110,39 @@ void calculate() {
 
 	// calculate v2
 	float currentAxis = b.getAxis(current);
-	//std::cout << "Current Axis: " << currentAxis << std::endl;
 	float targetAxis = b.getAxis(target);
-	//std::cout << "Target Axis: " << targetAxis << std::endl;
-	// part one
-	int v2p1 = std::abs (MU / targetAxis);
-	//std::cout << "v2p1: " << v2p1 << std::endl;
-	long v2p2 = std::abs (sqrt(v2p1));
-	//std::cout << "v2p2: " << v2p2 << std::endl;
+	int v2p1 = (MU / targetAxis);
+	long v2p2 = (sqrt(v2p1));
 	
 	// part two
 	float v2p3 = 2 * currentAxis;
-	//std::cout << "v2p3: " << v2p3 << std::endl;
 	float v2p4 = currentAxis + targetAxis;
-	//std::cout << "v2p4: " << v2p4 << std::endl;
 	float v2p5 = v2p3 / v2p4;
-	//std::cout << "v2p5: " << v2p5 << std::endl;
 	float v2p6 = sqrt(v2p5);
-	//std::cout << "v2p6: " << v2p6 << std::endl;
 	
 	// part three
 	v2 = v2p2 * (1 - v2p6);
 
 	// calculate transfer period
 	float transferAxis = v2p4 / 2;
-	std::cout << "Transfer Axis: " << transferAxis << std::endl;
+	//std::cout << "Transfer Axis: " << transferAxis << std::endl;
 	float trp1 = (pow(transferAxis, 3) / MU);
 	float trp2 = sqrt(trp1);
 	float transferPeriod = (2 * 3.14) * trp2;
-	std::cout << "Transfer Period: " << transferPeriod << std::endl;
+	//std::cout << "Transfer Period: " << transferPeriod << std::endl;
 
 
 	// calculate angular velocity of target
 	float angv1 = pow(targetAxis, 3);
-	std::cout << "angv1: " << angv1 << std::endl;
+	//std::cout << "angv1: " << angv1 << std::endl;
 	float angv2 = sqrt(MU / angv1);
-	std::cout << "angv2: " << angv2 << std::endl;
+	//std::cout << "angv2: " << angv2 << std::endl;
 	float angv3 = sqrt(angv2);
-	std::cout << "angv3: " << angv3 << std::endl;
+	//std::cout << "angv3: " << angv3 << std::endl;
 	float angv4 = (360 / (2 * 3.14));
-	std::cout << "angv4: " << angv4 << std::endl;
+	//std::cout << "angv4: " << angv4 << std::endl;
 	float targetVel = angv4 * angv3;
-	std::cout << "Target Vel: " << targetVel << std::endl;
+	//std::cout << "Target Vel: " << targetVel << std::endl;
 
 	// calculate phaseAngle
 	phaseAngle = 180 - (0.5 * transferPeriod * targetVel);

@@ -2,10 +2,10 @@
 
 Body::Body() {
 	// 0
-	Body::mohoAxis = 5263138304;
+	Body::mohoAxis = 0.5263138304;
 	Body::mohoVel = 1161;
 	// 1
-	Body::eveAxis = 9832684544;
+	Body::eveAxis = 0.9832684544;
 	Body::eveVel = 4831;
 	// 2
 	Body::kerbinAxis = 1.3599840256;
@@ -14,13 +14,13 @@ Body::Body() {
 	Body::dunaAxis = 2.0726155264;
 	Body::dunaVel = 1372;
 	// 4
-	Body::dresAxis = 40839348203;
+	Body::dresAxis = 4.0839348203;
 	Body::dresVel = 558;
 	// 5
-	Body::joolAxis = 68773560320;
+	Body::joolAxis = 6.8773560320;
 	Body::joolVel = 9704;
 	// 6
-	Body::eelooAxis = 90118820000;
+	Body::eelooAxis = 9.0118820000;
 	Body::eelooVel = 841;
 }
 
