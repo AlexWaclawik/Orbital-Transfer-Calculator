@@ -1,27 +1,31 @@
+#include <iostream>
+
 class Body {
 	public:
+		Body();
 		// 0
-		int mohoAxis;
+		float mohoAxis;
 		int mohoVel;
 		// 1
-		int eveAxis;
+		float eveAxis;
 		int eveVel;
 		// 2
-		int kerbinAxis;
+		float kerbinAxis;
 		int kerbinVel;
 		// 3
-		int dunaAxis;
+		float dunaAxis;
 		int dunaVel;
 		// 4
-		int dresAxis;
+		float dresAxis;
 		int dresVel;
 		// 5
-		int joolAxis;
+		float joolAxis;
 		int joolVel;
 		// 6
-		int eelooAxis;
+		float eelooAxis;
 		int eelooVel;
 	public:
-		int getAxis(std::string x;
+		float getAxis(std::string x);
 		int getVel(std::string x);
 };
+
