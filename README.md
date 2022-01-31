@@ -1,120 +1,69 @@
-## Algorithm
+## Orbital Transfer Calculator
 
-###### Alex Waclawik
-###### May 11th, 2021
-###### Orbital Transfer Calculator
+A calculation tool for orbital transfer trajectories in the physics simulator ***Kerbal Space Program***.
+Enter information about your current orbit and desination, and the program will calculate the necessary
+transfer trajectories using real life astronomical formulas.
 
+<p align="right"></p>
 
-## How To Run
+### Installation
 
-###### Instructions
-	* Type "make" then "make run"
-	* Follow the instructions and input accordingly
-	* Program will calculate the trajectory for your maneuver
+1. Clone the repository
+2. Compile the program by typing **make**
+3. Run the program by typing **make run**
+4. Follow the instructions in the terminal
 
-###### MAKEFILE COMMANDS:
-	* "make" - compiles program
-	* "make run" - runs program
-	* "make clean" - cleans up previous compile
+<p align="right"></p>
 
+### Glossary
 
-## Glossary
+**Prograde**
+- Rotational motion that is in the direction of the central body's orbit
 
-###### Prograde
-	* rotational motion that is in the direction of the central body's orbit
+**Retrograde**
+- Rotation motion that is in the opposite direction of the central body's orbit
 
-###### Retrograde
-	* rotation motion that is in the opposite direction of the central body's orbit
+**Apoapsis**
+- Highest point in an orbit where kinetic energy is lowest and potential energy is highest
 
-###### Apoapsis
-	* highest point in an orbit where kinetic energy is lowest and potential energy is highest
+**Periapsis**
+- Lowest point in an orbit where kinetic energy is highest and potential energy is lowest
 
-###### Periapsis
-	* lowest point in an orbit where kinetic energy is highest and potential energy is lowest
+**Orbital Period**
+- Time it takes for an object to complete a single orbit around a body
 
-###### Orbital Period
-	* time it takes for an object to complete a single orbit around a body
+**[Semi-Major Axis](https://en.wikipedia.org/wiki/Semi-major_and_semi-minor_axes)**
+- Longest radius of an orbit
 
-###### [Semi-Major Axis](https://en.wikipedia.org/wiki/Semi-major_and_semi-minor_axes)
-	* longest radius of an orbit
+**[Standard Gravitational Parameter](https://en.wikipedia.org/wiki/Standard_gravitational_parameter)**
+- Represented by Mu, it is the product of the gravitational constant G and the mass of the body
 
-###### [Standard Gravitational Parameter](https://en.wikipedia.org/wiki/Standard_gravitational_parameter)
-	* represented by Mu, it is the product of the gravitational constant G and the mass of the body
+**[Escape Velocity](https://en.wikipedia.org/wiki/Escape_velocity)**
+- Minimum speed needed to escape the gravitational influence of a body
 
-###### [Escape Velocity](https://en.wikipedia.org/wiki/Escape_velocity)
-	* minimum speed needed to escape the gravitational influence of a body
+**[Phase Angle](https://en.wikipedia.org/wiki/Phase_angle_(astronomy))**
+- Angle between the current body, target body, and the central body (sun or planet)
+	- This tells you how far forward or backward the target body will be relative to you
 
-###### [Phase Angle](https://en.wikipedia.org/wiki/Phase_angle_(astronomy))
-	* angle between the current body, target body, and the central body (sun or planet)
-	* this tells you how far forward or backward the target body will be relative to you
-###### [Delta V](https://en.wikipedia.org/wiki/Delta-v)
-	* because there is a lack of non-conservative forces (like air resistance), you maintain the same speed when performing maneuvers
-	* this is why the transfer is a two steps process:
-		1) calculate change in velocity needed to escape the current body (speed up)
-		2) calculate change in velocity needed to be captured by target body (slow down)
+**[Delta V](https://en.wikipedia.org/wiki/Delta-v)**
+- The amount of energy you have to perform a maneuver
+	- Due to the lack of non-conservative forces (like air resistance) in the simulator, you maintain the same speed when performing maneuvers
 
-###### [Hohmann Transfer](https://en.wikipedia.org/wiki/Hohmann_transfer_orbit)
-	* This manuever is the most efficent way to perform an interplanetary transfer.
-	* Utilizes and elliptical orbit and a periapsis burn (where you have the most kinetic energy)
+**[Hohmann Transfer](https://en.wikipedia.org/wiki/Hohmann_transfer_orbit)**
+	- This manuever is the most efficent way to perform an interplanetary transfer
 
-###### [Kerbal Space Program](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
-	* A sandbox space flight simulator that features realistic orbital mechanics and physics.
+**[Kerbal Space Program](https://en.wikipedia.org/wiki/Kerbal_Space_Program)**
+	* A sandbox space flight simulator that features realistic orbital mechanics and physics
 	* Values for the body's are taken directly from the [Kerbal Space Program Wiki](https://wiki.kerbalspaceprogram.com/wiki/Main_Page)
 
+<p align="right"></p>
 
-## Summary
+### Design
 
-###### Goals
-	* Given inputs about the user's current orbit, calculate the necessary trajectories to perform a Hohmann Transfer Orbit to a body of the user's choice.
-	* This program is intended to be used as a companion to the game Kerbal Space Program
+Each planetary body is organized into a data structure that contains the important information about each planet. Each body
+is identified with a number from zero to six, with zero being closest to the Sun and six being farthest. Additionally, the
+length of the Semi-Major Axis and Escape Velocity for each body is also held.
 
-###### Inputs
-	* primary body currently being orbited
-	* body that the user wants to transfer to
+![Equations](https://raw.githubusercontent.com/AlexWaclawik/Orbital-Transfer-Calculator/main/base/equations.png)
 
-###### Outputs
-	* phase angle of the manuever
-	* transfer angle of the manuever
-
-###### Variables
-	* N/A
-
-###### Libraries
-	* <iostream>
-	* <fstream>
-	* <cmath>
-
-
-## Procedure
-
-###### Data Structures
-	* Body
-		* static data structure that contains important information about each of the planets
-			* planet identifer (number 0-6)
-				* 0 - Moho
-				* 1 - Eve
-				* 2 - Kerbin
-				* 3 - Duna
-				* 4 - Dres
-				* 5 - Jool
-				* 5 - Eeloo
-                        * Length of Semi-Major Axis (m)
-                        * Escape Velocity (m/s)
-
-###### Calculation
-	1) After user input is taken, several values will be directly and indirectly extrapolated
-		* Current Body
-			* semi-major axis of current orbit (r_current)
-			* standard gravitational parameter of current primary body (mu_current)
-		* Target Body
-			* semi-major axis of target body (r_target)
-			* sphere of influence of target body (soi_target)
-			* escape velocity of target body (v_e)
-	2) Using these values, the program will then calculate the following information:
-		* semi-major axis of transfer orbit
-		* delta v required for ejection and insertion burn
-		* angular velocity of target body
-		* orbital period of transfer orbit
-		* phase angle
-
-###### ![Equations](https://raw.githubusercontent.com/AlexWaclawik/Orbital-Transfer-Calculator/main/base/equations.png)
+<p align="right"></p>
