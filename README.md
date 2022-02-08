@@ -50,10 +50,10 @@ transfer trajectories using real life astronomical formulas.
 	- Due to the lack of non-conservative forces (like air resistance) in the simulator, you maintain the same speed when performing maneuvers
 
 **[Hohmann Transfer](https://en.wikipedia.org/wiki/Hohmann_transfer_orbit)**
-	- This manuever is the most efficent way to perform an interplanetary transfer
+- This manuever is the most efficent way to perform an interplanetary transfer
 
 **[Kerbal Space Program](https://en.wikipedia.org/wiki/Kerbal_Space_Program)**
-	* A sandbox space flight simulator that features realistic orbital mechanics and physics
+* A sandbox space flight simulator that features realistic orbital mechanics and physics
 	* Values for the body's are taken directly from the [Kerbal Space Program Wiki](https://wiki.kerbalspaceprogram.com/wiki/Main_Page)
 
 <p align="right"></p>
